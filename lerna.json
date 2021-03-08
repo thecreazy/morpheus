@@ -1,0 +1,13 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "version": "1.0.0",
+  "publish": {
+    "npmClient": "npm",
+    "allowBranch": [
+      "master"
+    ],
+    "registry": "https://registry.npmjs.org/"
+  }
+}

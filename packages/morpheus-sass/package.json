@@ -1,0 +1,20 @@
+{
+  "name": "morpheus-sass",
+  "version": "1.0.0",
+  "description": "Style for morpheus",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scss",
+    "style",
+    "fringe"
+  ],
+  "files": [
+    "src/*",
+    "dist/*"
+  ],
+  "author": "Riccardo Canella <@thecreazy>",
+  "license": "MIT"
+}

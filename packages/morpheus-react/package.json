@@ -1,0 +1,25 @@
+{
+  "name": "morpheus-react",
+  "version": "1.0.0",
+  "description": "Morpheus react implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "morpheus",
+    "components"
+  ],
+  "author": "Riccardo Canella <@thecreazy>",
+  "license": "MIT",
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "files": [
+    "dist/*",
+    "src/*"
+  ]
+}

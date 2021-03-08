@@ -15,7 +15,8 @@
   "author": "@thecreazy <canella_riccardo@icloud.com>",
   "license": "MIT",
   "devDependencies": {
-    "commitizen": "^4.2.3"
+    "commitizen": "^4.2.3",
+    "lerna": "^4.0.0"
   },
   "config": {
     "commitizen": {
