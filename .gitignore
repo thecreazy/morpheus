@@ -1,0 +1,11 @@
+node_modules
+lerna-debug.log
+.vscode
+.DS_Store
+.log
+
+dist
+!packages/fringe-react/dist
+!packages/fringe-style/dist
+.idea/
+.npmrc

@@ -1,0 +1,25 @@
+{
+  "name": "morpheus",
+  "version": "1.0.0",
+  "description": "Neumorphic design system",
+  "main": "index.js",
+  "scripts": {
+    "commit": "npx git-cz"
+  },
+  "keywords": [
+    "design",
+    "system",
+    "react",
+    "Neumorphism"
+  ],
+  "author": "@thecreazy <canella_riccardo@icloud.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "commitizen": "^4.2.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
