@@ -5,7 +5,7 @@ lerna-debug.log
 .log
 
 dist
-!packages/fringe-react/dist
-!packages/fringe-style/dist
+!packages/morpheus-react/dist
+!packages/morpheus-sass/dist
 .idea/
 .npmrc

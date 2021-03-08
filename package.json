@@ -4,7 +4,12 @@
   "description": "Neumorphic design system",
   "main": "index.js",
   "scripts": {
-    "commit": "npx git-cz"
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "commit": "npx git-cz",
+    "version": "lerna version --conventional-commits --conventional-graduate",
+    "lint": "lerna run lint",
+    "build": "lerna run build"
   },
   "keywords": [
     "design",
