@@ -7,7 +7,4 @@ module.exports = {
   dist: resolve(__dirname, '../dist'),
   exclude: /node_modules/,
   browserList: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-  scssVariables: {
-    primary: '#000',
-  },
 };

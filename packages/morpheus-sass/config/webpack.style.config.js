@@ -8,9 +8,7 @@ const scss = require('./rules/scss');
 const css = require('./rules/css');
 
 const definePlugin = require('./plugins/define');
-const htmlPlugin = require('./plugins/html');
 const copyPublicPlugin = require('./plugins/copyPublic');
-const copyStaticPlugin = require('./plugins/copyStatic');
 const cssPlugin = require('./plugins/css');
 const bundleAnalyzerPlugin = require('./plugins/bundleAnalyzer');
 
@@ -36,9 +34,7 @@ module.exports = new Config().merge({
   },
   plugins: [
     definePlugin,
-    htmlPlugin,
     copyPublicPlugin,
-    copyStaticPlugin,
     cssPlugin,
     ...(process.env.analyzing ? [bundleAnalyzerPlugin] : []),
   ],

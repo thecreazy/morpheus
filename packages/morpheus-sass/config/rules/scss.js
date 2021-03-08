@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const { exclude, scssVariables } = require('../config');
+const { exclude } = require('../config');
 
 module.exports = {
   test: /\.(scss)$/,
@@ -14,11 +14,7 @@ module.exports = {
     },
     {
       loader: 'sass-loader',
-      options: {
-        data: `
-            $primary: ${scssVariables.primary};
-          `,
-      },
+      options: {},
     },
   ],
   exclude,
