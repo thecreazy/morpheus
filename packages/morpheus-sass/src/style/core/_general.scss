@@ -1,0 +1,12 @@
+@include font-face(inter, '../fonts/inter/bold', 700, null, ttf);
+@include font-face(inter, '../fonts/inter/medium', 600, null, ttf);
+@include font-face(inter, '../fonts/inter/regular', 500, null, ttf);
+@include font-face(inter, '../fonts/inter/light', 400, null, ttf);
+
+html {
+  font-size: $base-font-size;
+}
+
+body {
+  color: $font-color;
+}
