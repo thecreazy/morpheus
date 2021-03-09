@@ -10,4 +10,4 @@ environment.setAll({
 
 const Config = config.default;
 
-module.exports = new Config().extend('config/webpack.style.config.js');
+module.exports = new Config().extend('config/webpack.react.config.js');

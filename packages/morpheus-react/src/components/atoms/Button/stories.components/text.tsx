@@ -51,7 +51,7 @@ export default () => (
         ]}
         optionWidth="small"
         onClick={action('Button Pressed')}
-      ></Button>
+       />
     </div>
   </Title>
 );

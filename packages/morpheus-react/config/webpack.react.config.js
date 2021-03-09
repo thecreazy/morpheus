@@ -3,6 +3,7 @@ const Config = require('webpack-config').default;
 const { src, dist } = require('./config');
 
 const javascript = require('./rules/javascript');
+const typescript = require('./rules/typescript');
 const images = require('./rules/images');
 const scss = require('./rules/scss');
 const css = require('./rules/css');
@@ -19,7 +20,7 @@ module.exports = new Config().merge({
   context: src,
   mode: 'production',
   entry: {
-    main: './index.js',
+    main: './index.ts',
   },
   output: {
     path: dist,
@@ -27,10 +28,10 @@ module.exports = new Config().merge({
     publicPath: '/',
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.scss', '.css'],
+    extensions: ['*', '.scss', '.css', '.tsx', '.ts', '.js', '.jsx'],
   },
   module: {
-    rules: [javascript, images, scss, css],
+    rules: [typescript, javascript, images, scss, css],
   },
   plugins: [
     definePlugin,

@@ -29,7 +29,7 @@ const Button = ({
   optionDirection,
   tangerine,
   loading,
-  ...props
+  ...rest
 }) => {
   const [optionClose, setOption] = useState(true);
 
@@ -52,7 +52,7 @@ const Button = ({
 
   return (
     <button
-      {...props}
+      {...rest}
       className={cx(className, {
         btn: true,
         '--primary': !!primary,
@@ -90,8 +90,7 @@ const Button = ({
             '--open': !optionClose,
           })}
         >
-          {options.map((option) => {
-            return (
+          {options.map((option) => (
               <div
                 aria-label="0"
                 className={cx({
@@ -106,8 +105,7 @@ const Button = ({
               >
                 {option.label}
               </div>
-            );
-          })}
+            ))}
         </div>
       )}
     </button>

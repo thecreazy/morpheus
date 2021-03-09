@@ -1,0 +1,9 @@
+node_modules
+coverage
+dist
+.github
+public
+jest.config.js
+rollup.config.js
+tsconfig.json
+enzyme
