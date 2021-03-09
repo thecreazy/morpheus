@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Button from '..';
 import Title from '../../../../../.storybook/components/Title';
 
-export default () => (
+const Story: React.FunctionComponent = () => (
   <Title title="Button | Danger">
     <h3 style={{ marginTop: '20px', marginBottom: '5px' }}>Big</h3>
     <Button danger onClick={action('Button Pressed')}>
@@ -40,14 +40,7 @@ export default () => (
     <Button block danger onClick={action('Button Pressed')}>
       Confirm
     </Button>
-
-    <h3 style={{ marginTop: '20px', marginBottom: '5px' }}>Icon</h3>
-    <Button danger icon="AddBig16X" onClick={action('Button Pressed')} />
-    <br />
-    <br />
-    <Button danger medium icon="AddBig16X" onClick={action('Button Pressed')} />
-    <br />
-    <br />
-    <Button danger small icon="AddBig16X" onClick={action('Button Pressed')} />
   </Title>
 );
+
+export default Story;

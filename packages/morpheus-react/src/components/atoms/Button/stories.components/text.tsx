@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Button from '../index';
 import Title from '../../../../../.storybook/components/Title';
 
-export default () => (
+const Story: React.FunctionComponent = () => (
   <Title title="Button | Text">
     <h3 style={{ marginTop: '20px', marginBottom: '5px' }}>Big</h3>
     <Button text onClick={action('Button Pressed')}>
@@ -41,7 +41,6 @@ export default () => (
 
     <div style={{ marginLeft: '200px' }}>
       <Button
-        icon
         medium
         text
         optionDirection="right"
@@ -51,7 +50,9 @@ export default () => (
         ]}
         optionWidth="small"
         onClick={action('Button Pressed')}
-       />
+       >ciao</Button>
     </div>
   </Title>
 );
+
+export default Story;

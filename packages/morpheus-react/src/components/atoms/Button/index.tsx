@@ -1,9 +1,9 @@
-/* eslint-disable react/button-has-type */
-import React, { useState } from 'react';
+import React, { useState, FunctionComponent, MouseEventHandler } from 'react';
 import cx from 'classnames';
-import PropTypes from 'prop-types';
 
-const Button = ({
+import type { ButtonProps, OptionsProps } from "./index.d";
+
+const Button: FunctionComponent<ButtonProps> = ({
   block,
   children,
   type,
@@ -18,7 +18,6 @@ const Button = ({
   danger,
   negative,
   onClick,
-  icon,
   dashed,
   left,
   options,
@@ -33,8 +32,8 @@ const Button = ({
 }) => {
   const [optionClose, setOption] = useState(true);
 
-  const handleClick = (e) => {
-    if (!options.length) onClick(e);
+  const handleClick: MouseEventHandler = (e: React.MouseEvent<HTMLInputElement>) => {
+    if (!!options && !options.length && onClick) onClick(e);
     else setOption(!optionClose);
   };
 
@@ -44,10 +43,10 @@ const Button = ({
     }, 200);
   };
 
-  const handleOptionClick = (e, option) => {
+  const handleOptionClick = (e: React.MouseEvent<HTMLInputElement> | React.KeyboardEvent<Element>, option: OptionsProps) => {
     e.preventDefault();
     e.stopPropagation();
-    onClick(option);
+    if(onClick) onClick(option);
   };
 
   return (
@@ -64,10 +63,9 @@ const Button = ({
         '--danger': !!danger,
         '--negative': !!negative,
         '--block': !!block,
-        '--icon': !!icon,
         '--dashed': !!dashed,
         '--left': !!left,
-        '--options': options.length > 0,
+        '--options': !!options && options.length > 0,
         '--text': !!text,
         '--empty': !!empty,
         '--little': !!little,
@@ -80,8 +78,8 @@ const Button = ({
       onBlur={handleBlur}
       onClick={handleClick}
     >
-      {typeof icon !== 'string' && children}
-      {options.length > 0 && (
+      {children}
+      {!!options && options.length > 0 && (
         <div
           className={cx({
             __options: true,
@@ -90,18 +88,18 @@ const Button = ({
             '--open': !optionClose,
           })}
         >
-          {options.map((option) => (
+          {!!options && options.map((option) => (
               <div
                 aria-label="0"
                 className={cx({
                   __option: true,
                   '--danger': option.type === 'danger',
-                  '--success': option.type === 'base.jsx',
+                  '--success': option.type === 'base',
                 })}
                 key={option.id}
                 role="presentation"
-                onClick={(e) => handleOptionClick(e, option)}
-                onKeyPress={(e) => handleOptionClick(e, option)}
+                onClick={(e: React.MouseEvent<HTMLInputElement>) => handleOptionClick(e, option)}
+                onKeyPress={(e: React.KeyboardEvent<Element>) => handleOptionClick(e, option)}
               >
                 {option.label}
               </div>
@@ -110,38 +108,6 @@ const Button = ({
       )}
     </button>
   );
-};
-
-Button.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-    PropTypes.func,
-  ]),
-  type: PropTypes.string,
-  primary: PropTypes.bool,
-  secondary: PropTypes.bool,
-  disabled: PropTypes.bool,
-  medium: PropTypes.bool,
-  small: PropTypes.bool,
-  confirm: PropTypes.bool,
-  danger: PropTypes.bool,
-  negative: PropTypes.bool,
-  block: PropTypes.bool,
-  onClick: PropTypes.func,
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  className: PropTypes.string,
-  dashed: PropTypes.bool,
-  left: PropTypes.bool,
-  options: PropTypes.arrayOf(PropTypes.shape),
-  text: PropTypes.bool,
-  empty: PropTypes.bool,
-  optionWidth: PropTypes.string,
-  optionDirection: PropTypes.string,
-  little: PropTypes.bool,
-  cerulean: PropTypes.bool,
-  tangerine: PropTypes.bool,
-  loading: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -156,8 +122,6 @@ Button.defaultProps = {
   negative: false,
   block: false,
   onClick: () => null,
-  icon: false,
-  children: () => null,
   className: '',
   dashed: false,
   left: false,

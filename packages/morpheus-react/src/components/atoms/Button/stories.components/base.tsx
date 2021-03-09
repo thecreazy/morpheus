@@ -8,7 +8,7 @@ const Cta = (
   <p className="--small -color-cerulean5 -flex-vertical-center">Add Option</p>
 );
 
-export default () => {
+const Story: React.FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
   return (
     <Title title="Button | Base">
@@ -57,8 +57,10 @@ export default () => {
         className="-margin-right1x"
         onClick={action('Button Pressed')}
       >
-        <span>ciao </span>
-        Div interni
+        <>
+          <span>ciao </span>
+          Div interni
+        </>
       </Button>
 
       <Button
@@ -93,14 +95,6 @@ export default () => {
         Base
       </Button>
 
-      <h3 style={{ marginTop: '20px', marginBottom: '5px' }}>Icon</h3>
-      <Button icon="AddBig16X" onClick={action('Button Pressed')} />
-      <br />
-      <br />
-      <Button medium icon="AddBig16X" onClick={action('Button Pressed')} />
-      <br />
-      <br />
-      <Button small icon="AddBig16X" onClick={action('Button Pressed')} />
 
       <h3 style={{ marginTop: '20px', marginBottom: '5px' }}>Empty</h3>
       <Button empty medium onClick={action('Button Pressed')}>
@@ -109,3 +103,5 @@ export default () => {
     </Title>
   );
 };
+
+export default Story;

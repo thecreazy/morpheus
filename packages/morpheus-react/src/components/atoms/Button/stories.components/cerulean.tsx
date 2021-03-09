@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Button from '..';
 import Title from '../../../../../.storybook/components/Title';
 
-export default () => (
+const Story: React.FunctionComponent = () => (
   <Title title="Button | Cerulean">
     <h3 style={{ marginTop: '20px', marginBottom: '5px' }}>Big</h3>
     <Button cerulean onClick={action('Button Pressed')}>
@@ -42,3 +42,5 @@ export default () => (
     </Button>
   </Title>
 );
+
+export default Story;

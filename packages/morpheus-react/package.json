@@ -76,6 +76,7 @@
     "webpack-node-externals": "^2.5.2"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.11",
     "classnames": "^2.2.6",
     "morpheus-sass": "^1.0.0",
     "prop-types": "^15.7.2",

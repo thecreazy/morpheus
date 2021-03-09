@@ -9,11 +9,15 @@ module.exports = {
     es6: true,
   },
   rules: {
+    'react/jsx-props-no-spreading': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/no-mutable-exports': 0,
     'no-labels': 0,
     'no-restricted-syntax': 0,
-    'react/prop-types': [2, { ignore: ['children'] }],
+    '@typescript-eslint/ban-types': 0,
+    'react/button-has-type': 0,
+    'import/prefer-default-export': 0,
+    'react/prop-types': 0,
   },
   plugins: ['@typescript-eslint'],
   extends: [
