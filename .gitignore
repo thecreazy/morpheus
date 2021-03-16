@@ -9,3 +9,4 @@ dist
 !packages/morpheus-sass/dist
 .idea/
 .npmrc
+docs

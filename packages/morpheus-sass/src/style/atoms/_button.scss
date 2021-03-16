@@ -1,0 +1,92 @@
+$button-base-background: #F5F5FA;
+$button-base-color: #7878AB;
+$button-hover-background: #E5E5F0;
+$button-base-radius: 16px;
+$button-base-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(170, 170, 204, 0.25), 10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #FFFFFF;
+$button-pressed-shadow: 5px 5px 10px rgba(170, 170, 204, 0.5), -5px -5px 10px #FFFFFF;
+
+$button-base-font-size: 0.8125rem;
+$button-base-font-size-small: 0.6875rem;
+$button-base-font-size-little: 0.6875rem;
+$button-base-line-height: 1.3125rem;
+$button-base-line-height-small: 0.9375rem;
+$button-base-line-height-little: 0.9375rem;
+
+$button-base-height: 3rem;
+$button-base-height-small: 1.5rem;
+$button-base-height-little: 2rem;
+$button-base-height-medium: 2.5rem;
+
+$button-base-letter-spacing: 0.00625rem;
+$button-base-letter-spacing-small: 0.0125rem;
+$button-base-letter-spacing-little: 0.0125rem;
+
+$button-base-padding: 0 2rem;
+$button-base-padding-small: 0 0.5rem;
+$button-base-padding-little: 0 1rem;
+$button-base-padding-medium: 0 1rem;
+
+
+
+
+$button-transiction-time: 0.25s;
+
+.btn {
+  -webkit-appearance: none;
+  background: $button-base-background;
+  border: none;
+  border-radius: $button-base-radius;
+  box-sizing: border-box;
+  color: $button-base-color;
+  cursor: pointer;
+  font-size: $button-base-font-size;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  font-weight: $weight-medium;
+  height: $button-base-height;
+  letter-spacing: $button-base-letter-spacing;
+  line-height: $button-base-line-height;
+  outline: none;
+  overflow: visible;
+  padding: $button-base-padding;
+  position: relative;
+  text-align: center;
+  transition: color $button-transiction-time ease,
+    background $button-transiction-time ease,
+    box-shadow $button-transiction-time ease,
+    border $button-transiction-time ease;
+  white-space: nowrap;
+  width: auto;
+  box-shadow: $button-base-shadow;
+
+  &:hover{
+    background: $button-hover-background;
+  }
+
+  &:active{
+    background: $button-hover-background;
+    box-shadow: $button-pressed-shadow;
+  }
+
+  &.--little {
+    font-size: $button-base-font-size-little;
+    height: $button-base-height-little;
+    letter-spacing: $button-base-letter-spacing-little;
+    line-height: $button-base-line-height-little;
+    padding: $button-base-padding-little;
+  }
+
+  &.--small {
+    font-size: $button-base-font-size-small;
+    height: $button-base-height-small;
+    letter-spacing: $button-base-letter-spacing-small;
+    line-height: $button-base-line-height-small;
+    padding: $button-base-padding-small;
+  }
+
+  &.--medium {
+    height: $button-base-height-medium;
+    padding: $button-base-padding-medium;
+  }
+
+}

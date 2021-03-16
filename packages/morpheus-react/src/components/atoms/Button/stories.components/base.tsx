@@ -94,12 +94,6 @@ const Story: React.FunctionComponent = () => {
       <Button block onClick={action('Button Pressed')}>
         Base
       </Button>
-
-
-      <h3 style={{ marginTop: '20px', marginBottom: '5px' }}>Empty</h3>
-      <Button empty medium onClick={action('Button Pressed')}>
-        {Cta}
-      </Button>
     </Title>
   );
 };

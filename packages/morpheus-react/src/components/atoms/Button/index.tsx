@@ -1,32 +1,25 @@
 import React, { useState, FunctionComponent, MouseEventHandler } from 'react';
 import cx from 'classnames';
 
+// import 'morpheus-sass/src/style/atoms/_button.scss';
+
 import type { ButtonProps, OptionsProps } from "./index.d";
 
 const Button: FunctionComponent<ButtonProps> = ({
   block,
   children,
   type,
-  primary,
-  secondary,
   disabled,
   medium,
   small,
   little,
-  confirm,
-  cerulean,
-  danger,
   negative,
   onClick,
-  dashed,
-  left,
   options,
   className,
   text,
-  empty,
   optionWidth,
   optionDirection,
-  tangerine,
   loading,
   ...rest
 }) => {
@@ -54,23 +47,15 @@ const Button: FunctionComponent<ButtonProps> = ({
       {...rest}
       className={cx(className, {
         btn: true,
-        '--primary': !!primary,
-        '--secondary': !!secondary,
         '--medium': !!medium,
         '--small': !!small,
         '--disabled': !!disabled,
         '--confirm': !!confirm,
-        '--danger': !!danger,
         '--negative': !!negative,
         '--block': !!block,
-        '--dashed': !!dashed,
-        '--left': !!left,
         '--options': !!options && options.length > 0,
         '--text': !!text,
-        '--empty': !!empty,
         '--little': !!little,
-        '--cerulean': !!cerulean,
-        '--tangerine': !!tangerine,
         '--loading': !!loading,
       })}
       role={type}
@@ -112,27 +97,18 @@ const Button: FunctionComponent<ButtonProps> = ({
 
 Button.defaultProps = {
   type: 'button',
-  primary: false,
-  secondary: false,
   disabled: false,
   medium: false,
   small: false,
-  confirm: false,
-  danger: false,
   negative: false,
   block: false,
   onClick: () => null,
   className: '',
-  dashed: false,
-  left: false,
   options: [],
   text: false,
-  empty: false,
   optionWidth: '',
   optionDirection: '',
   little: false,
-  cerulean: false,
-  tangerine: false,
   loading: false,
 };
 

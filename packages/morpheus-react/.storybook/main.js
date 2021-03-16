@@ -1,4 +1,5 @@
 const scss = require('../config/rules/scss');
+const cssPlugin = require('../config/plugins/css');
 
 module.exports = {
   stories: [
